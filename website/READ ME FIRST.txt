@@ -1,0 +1,2 @@
+Please note that most of this stuff WILL NOT WORK without a database!
+I'll look at adding a SQL export at some point which you can use to replicate a database to play around with. but it's not there yet.

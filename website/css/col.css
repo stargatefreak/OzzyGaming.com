@@ -1,0 +1,76 @@
+.mainContent, .sidebar {
+	padding: 10px 5px;
+}
+
+.pageHeader {
+	height: 100px;
+	padding: 0;
+}
+
+
+/*  SIDEBAR STUFF  */
+.sidebar .section {
+	padding-bottom: 10px;
+	margin-bottom: 19px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+.sidebar .section:last-child {
+	border-bottom: 0;
+}
+
+
+/*  LOGIN BOX (Sidebar)  */
+.login label {
+	width: 80px;
+	cursor: pointer;
+}
+.login label[for="autologin"] {
+	width: auto;
+}
+
+.login input {
+	margin-bottom: 5px;
+}
+
+.login input[type="submit"] {
+	padding: 3px 5px;
+	display: block;
+	margin: 0 auto 5px auto;
+	width: 30%;
+}
+
+
+/*  PROFILE VIEW (sidebar)  */
+.sidebarProfileInfo p:first-of-type {
+	font-weight: bold;
+}
+
+.sidebarProfileInfo img {
+	width: 100px;
+	height: 100px;
+}
+
+.sidebarProfileInfo a {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.sidebarDonations h4 {
+	margin-top: 25px;
+}
+
+.sidebarDonations .progress {
+	max-width: 300px;
+	margin-bottom: 10px;
+}
+
+.sidebarDonations .pagination {
+	margin-top: 5px;
+}
+
+.sidebarDonations .well {
+	margin-bottom: 0;
+	max-width: 300px;
+}

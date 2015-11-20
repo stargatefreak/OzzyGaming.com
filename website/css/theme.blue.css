@@ -1,0 +1,28 @@
+.sidebar .section {
+	border-bottom-color: #557;
+}
+
+/* For homepage only */
+#wrapper > .section-alt {
+	background-color: #64819C;
+	color: #FFF;
+}
+
+#footer {
+	background-color: #4e5d6c;
+	border-color:#4e5d6c;
+}
+
+.themeMenu .dropdown-header {
+	color: #AAA;
+}
+
+.navbar-header .navbar-brand {
+	height: 50px;
+	padding: 14.5px 15px;
+}
+
+#navbar a {
+	padding-top: 15px;
+	padding-bottom: 14px;
+}

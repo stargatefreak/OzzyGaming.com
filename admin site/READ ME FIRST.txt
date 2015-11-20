@@ -1,0 +1,1 @@
+This is the current admin site. It's temporary because it will be included into the main website eventually.

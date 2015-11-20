@@ -1,0 +1,50 @@
+/* Sticky Footer and fixed header */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    padding-top: 60px;
+}
+
+.navbar {
+    margin-bottom: 10px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 59px;
+
+    background-color: #446e9b;
+    background-image: -webkit-linear-gradient(#3e648d, #446e9b 65%, #6d94bf);
+    background-image: -o-linear-gradient(#3e648d, #446e9b 65%, #6d94bf);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(65%#), color-stop(6d94bf, #446e9b), to(#3e648d));
+    background-image: linear-gradient(#3e648d, #446e9b 65%, #6d94bf);
+    border: 1px solid #345578;
+    border-bottom: 0px;
+}
+
+.footer p {
+    color: #999;
+    font-size: 10px;
+    font-style: italic;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar-text {
+    margin-top: 17px;
+    margin-bottom: 13px;
+}
+
+.content {
+
+}
+
+a {
+    cursor: pointer;
+}

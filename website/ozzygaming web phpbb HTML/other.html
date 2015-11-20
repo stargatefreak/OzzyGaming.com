@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OzzyGaming Test Site</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/col.css" />
+	</head>
+	<body>
+
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">OzzyGaming</a>
+					</div>
+
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="">News</a></li>
+							<li><a href="">Forums</a></li>
+							<li><a href="">Donate</a></li>
+							<li><a href="">Store</a></li>
+							<li><a href="">Support</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									More<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="">Image Gallery</a></li>
+									<li><a href="">Event Calendar</a></li>
+									<li><a href="">Server List</a></li>
+									<li><a href="">Feature &amp; Bug Tracker</a></li>
+									<li><a href="">Toggle Site Theme (Dark)</a></li>
+									<li class="divider" role="separator"></li>
+									<li class="dropdown-header">Ozzy Tools</li>
+									<li><a href="">Team Management &amp; Apps</a></li>
+									<li><a href="">Altis Life Player Info</a></li>
+								</ul>
+							</li>
+						</ul>
+
+						<ul class="nav navbar-nav navbar-right">
+							<!-- If guest -->
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									Log In<span class="caret"></span>
+								</a>
+								<div class="dropdown-menu loginTop" style="padding: 20px; ">
+									<form>
+										<label for="usernameTop">Username:</label> <input type="text" id="usernameTop" name="username"><br />
+										<label for="passwordTop">Password:</label> <input type="password" id="passwordTop" name="password" /><br />
+										<input type="hidden" name="redirect" value="">
+										<input type="checkbox" name="autologin" id="autologinTop"> <label for="autologinTop">Remember me?</label><br />
+										<input type="submit" value="Log In" style="margin: 5px 0; width: 100%;"/><br />
+										<a href="">Lost your password?</a><br />
+										<a href="">Not a member? Register!</a>
+									</form>
+								</div>
+							</li>
+							<!-- If logged in -->
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									UserNameHere<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="">View My Profile</a></li>
+									<li><a href="">View Messages <span class="badge">10</span></a></li>
+									<li><a href="">Log Out</a></li>
+									<li class="divider" role="separator"></li>
+									<li class="dropdown-header">Administration Tools</li>
+									<li><a href="">Team Agreement</a></li>
+									<li><a href="">Team Performance</a></li>
+									<li><a href="">Support Tickets</a></li>
+									<li><a href="">Database (Web Client)</a></li>
+									<li><a href="">Email (Web Client)</a></li>
+									<li><a href="">Forum Moderation</a></li>
+									<li><a href="">Forum Administration</a></li>
+									<li><a href="">Administration Panel</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div id="wrapper">
+			<div class="container pageHeader">
+				some header... can put a logo here or something
+			</div>
+			<div class="container">
+				<div class="col-md-9 mainContent">
+					<h1>Content Area</h1>
+					<h2>Header</h2>
+					<h3>Header</h3>
+					<h4>Header</h4>
+					<p>This is a paragraph</p>
+				</div>
+				<!-- Sidebar! -->
+				<div class="col-md-3 sidebar">
+					<div class="section login">
+						<h3>Login</h3>
+						<form>
+							<label for="username">Username:</label> <input type="text" id="username" name="username"><br />
+							<label for="password">Password:</label> <input type="password" id="password" name="password" /><br />
+							<input type="hidden" name="redirect" value="">
+							<input type="checkbox" name="autologin" id="autologin"> <label for="autologin">Remember me?</label>
+							<input type="submit" value="Log In"/>
+
+							<a href="">Lost your password?</a><br />
+							<a href="">Not a member? Register!</a>
+						</form>
+					</div>
+					<div class="section sidebarProfileInfo">
+						<h3>Welcome!</h3>
+						<p>Hi MyUsernameHere</p>
+						<a href=""><img src="" alt="profile picture" /></a>
+						<a href="">View your profile</a>
+						<a href="">View your private messages <span class="badge">10 new</span></a>
+						<a href="">Log Out</a>
+					</div>
+					<div class="section sidebarUserMenu">
+						<h3>Side Menu</h3>
+					</div>
+					<div class="section sidebarDonations">
+						<h3>Donations</h3>
+						<p>Goal: $2000<br />
+						Goal Date: 22/08/2015<br />
+						Amount donated: $1000</p>
+						<div class="progress progress-striped">
+							<div class="progress-bar progress-bar-success" style="width: 50%" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">$1000 / $2000</div>
+						</div>
+						<p><a href="">Click HERE to donate!</a></p>
+						<h4>Donation History</h4>
+						<div class="well well-sm">
+							Person A<br />
+							Person B<br />
+							5 per page?
+						</div>
+						<ul class="pagination pagination-sm">
+							<li class="disabled"><a href="#" title="First">&laquo;</a></li>
+							<li class="disabled"><a href="#" title="Previous">&lsaquo;</a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#" title="Next">&rsaquo;</a></li>
+							<li><a href="#" title="Last">&raquo;</a></li>
+						</ul>
+					</div>
+					<div class="section sidebarLeaderboards">
+						<h3>Stats</h3>
+						<div class="btn-group btn-group-justified" role="group">
+							<a href="#" class="btn btn-default active">General Stats</a>
+							<a href="#" class="btn btn-default">Civ Hours</a>
+						</div>
+						<div class="btn-group btn-group-justified" role="group">
+							<a href="#" class="btn btn-default">Cop Hours</a>
+							<a href="#" class="btn btn-default">Medic Hours</a>
+						</div>
+						<div class="well well-sm">
+							Stats here :D
+						</div>
+					</div>
+					<div class="section sidebarOnlineUsers">
+						<h3>Online Users</h3>
+						<p>There are x users and x guests online</p>
+						<p>Online users: 
+						<a href="">personW</a>, 
+						<a href="">personX</a>, 
+						<a href="">personY</a>, 
+						<a href="">personZ</a><p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal for alert popups -->
+		<div class="modal fade" id="modalAlert">
+		  <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Modal title</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>One fine body&hellip;</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<footer id="footer">
+			<div class="socialmedia">
+				<a href="#"><img src="images/socialmedia/facebook.png" alt="Facebook" title="Facebook" /></a>
+				<a href="#"><img src="images/socialmedia/steam.png" alt="Steam" title="Steam" /></a>
+				<a href="#"><img src="images/socialmedia/google-plus.png" alt="Google Plus" title="Google+" /></a>
+				<a href="#"><img src="images/socialmedia/twitter.png" alt="Twitter" title="Twitter" /></a>
+				<a href="#"><img src="images/socialmedia/youtube.png" alt="YouTube" title="YouTube" /></a>
+				<a href="#"><img src="images/socialmedia/twitch.png" alt="Twitch TV" title="Twitch TV" /></a>
+			</div>
+
+			<div class="container">
+				<p>Copyright &copy; ozzygaming.com 2015. Design by Kieran.</p>
+			</div>
+		</footer>
+
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+		<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	</body>
+</html>

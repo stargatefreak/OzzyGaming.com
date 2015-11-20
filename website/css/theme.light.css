@@ -1,0 +1,15 @@
+.sidebar .section {
+	border-bottom-color: #BBB;
+}
+
+/* For homepage only */
+#wrapper > .section-alt {
+	background-color: #666;
+	color: #FFF;
+}
+
+#footer {
+	background-color: #333333;
+	border-color: #222222;
+	color: #FFF;
+}

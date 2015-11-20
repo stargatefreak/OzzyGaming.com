@@ -1,0 +1,60 @@
+/*  GENERAL  */
+
+html {
+	position: relative; /* sticky footer */
+	min-height: 100%; /* sticky footer */
+}
+
+body {
+	padding-top: 60px; /* Fixed navbar, 50 high + 20 margin */
+	margin-bottom: 80px; /* Sticky footer, 80 high */
+	padding-bottom: 20px;
+}
+
+
+/* -- -- -- -- -- -- -- -- -- -- */
+/*  NAVBAR  */
+
+header > nav {
+	position: relative;
+}
+
+header > nav > .container {
+	min-height: 48px;
+}
+
+header .loginTop input {
+	margin-bottom: 5px;
+}
+
+
+/* -- -- -- -- -- -- -- -- -- -- */
+/*  FOOTER  */
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 78px;
+	background-color: #3a3f44;
+	border: 1px solid #2b2e32;
+}
+
+#footer > .container {
+	clear: none;
+}
+
+#footer > .container > p {
+	text-align: center;
+	padding-top: 25px;
+}
+
+#footer > .socialmedia {
+	float: right;
+	margin: 5px 10px 0 0;
+	max-width: 25%;
+}
+
+#footer > .socialmedia img {
+	width: 26px;
+}
