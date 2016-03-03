@@ -11,7 +11,7 @@
         <h5>Database Tools List</h5>
         <?php
             // List of DB actions available
-            $pages = array('viewJoining','viewMessages','viewRevives','viewWanted','viewRobberies','viewTransfers','viewCrafting','viewHouses');
+            $pages = array('viewJoining','viewMessages','viewRevives','viewWanted','viewRobberies','viewTransfers','viewCrafting','viewHouses','viewTrucks');
 
             $pageNav = array(
                     // pageCode => minAdminLevel, pageName
@@ -19,6 +19,7 @@
                     "viewJoining"=>array(1,"View Join/Leave History"),
                     "viewMessages"=>array(1, "View Cellphone Messages"),
                     "viewRevives"=>array(1,"View Revives"),
+                    "viewTrucks"=>array(1,"View Truck Missions"),
                     "viewRobberies"=>array(2, "View Robberies"),
                     "viewTransfers"=>array(3, "View Cash Transfers"),
                     "viewCrafting"=>array(3,"View Crafting History"),
