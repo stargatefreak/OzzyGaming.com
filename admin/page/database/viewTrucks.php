@@ -76,7 +76,7 @@
         if (count($result) != 0){
             foreach ($result as $log) {
                 // 0 - whole message, 1 - player, 2 - type, 3 - location
-                preg_match("/[\d\-]+\s[\d\:]+\s\"[\d]+\"\s[\"]+\s\"[\w]+\"\s\"([\D\d]+) started a truck mission \((ILLEGAL|LEGAL)\) at [\[\d\,\.\]]+ \((\d+)\)\"/i",$log['info'], $matches);
+                preg_match("/\"([\D\d]+) started a truck mission \((ILLEGAL|LEGAL)\) at [\[\d\,\.\]]+ \((\d+)\)\"/i",$log['info'], $matches);
 
                 $output['data'][] = array(
                         "time" => $log['time'],
