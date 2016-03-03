@@ -50,10 +50,17 @@
         var startEntry = (currentPage-1) * numRowsPerPage;
         var endEntry = startEntry + numRowsPerPage;
         var data = cacheData.slice( startEntry , endEntry );
-
+		switch (data[i]['type']){
+			case "ILLEGAL":
+				var type = '<span style="color: #F00">Illegal</span>';
+				break;
+			case "LEGAL":
+				var type = '<span style="color: #0F0">Legal</span>';
+				break;
+		}
             tab.html("");
             for (var i = 0; i < data.length; i++) {
-                tab.append('<tr> <td>'+data[i]['time']+'</td> <td>'+data[i]['player']+'</td> <td>'+data[i]['type']+'</td> <td>'+data[i]['location']+'</td> </tr>');
+                tab.append('<tr> <td>'+data[i]['time']+'</td> <td>'+data[i]['player']+'</td> <td>'+type+'</td> <td>'+data[i]['location']+'</td> </tr>');
             };
         }
 </script>
