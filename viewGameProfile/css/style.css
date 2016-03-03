@@ -1,0 +1,51 @@
+/* Main Page Styling */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 60px;
+}
+
+#header {
+	height: 60px;
+	width: 100%;
+	background-color: #00A;
+}
+
+#header h1 {
+	margin: 0px;
+	padding: 5px 0 0 40px;
+	color: #FFF;
+}
+
+#content {
+	margin-top: 10px;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #88B;
+}
+
+#footer p {
+	text-align: center;
+	padding-top: 6px;
+	color: #CCC;
+}
+
+/* Item Styling */
+label {
+	font-weight: normal;
+	width: 100%;
+	height: 100%;
+}
