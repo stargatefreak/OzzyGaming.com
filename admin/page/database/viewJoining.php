@@ -100,14 +100,14 @@
                 preg_match("/\"(.+) (joined|aborted) [\w\s]+? (?:as|from)[\[\d\.\,\]\s]+(?:\()?(\w+)?(\d+)?(?:\))?\"/i",$log['info'], $matches);
 				
 				if (strpos($log['info'], 'unusual manner') !== false) {
-					$manner = 'Left in unusual manner'
+					$manner = 'Left in unusual manner';
 				} else {
-					$manner = 'Left the server'
-				}
+					$manner = 'Left the server';
+				};
                 $output['data'][] = array(
                         "time" => $log['time'],
                         "player" => trim($matches['1']),
-						"faction" =>  trim($matches['3'])
+						"faction" =>  trim($matches['3']),
 						"manner" => $manner
                     );
             }
