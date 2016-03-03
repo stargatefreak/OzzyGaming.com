@@ -67,11 +67,11 @@
                             fac += '<span style="color: #0F0">Medic</span>';
                             break;
                         default: 
-                            var fac = 'Left the server';
+                            var fac = data[i]['manner'];
                             var pos = data[i]['faction'];
                     }
                 } else {
-                    var fac = "Left the server";
+                    var fac = data[i]['manner'];
                 }
 				
                 tab.append('<tr> <td>'+data[i]['time']+'</td> <td>'+data[i]['player']+'</td> <td>'+fac+'</td> <td>'+pos+'</td> </tr>');
@@ -99,11 +99,16 @@
                 // 0 - whole message, 1 - player, 2 - faction
                 preg_match("/\"(.+) (joined|aborted) [\w\s]+? (?:as|from)[\[\d\.\,\]\s]+(?:\()?(\w+)?(\d+)?(?:\))?\"/i",$log['info'], $matches);
 				
-				
+				if (strpos($log['info'], 'unusual manner') !== false) {
+					$manner = 'Left in unusual manner'
+				} else {
+					$manner = 'Left the server'
+				}
                 $output['data'][] = array(
                         "time" => $log['time'],
                         "player" => trim($matches['1']),
 						"faction" =>  trim($matches['3'])
+						"manner" => $manner
                     );
             }
         }
