@@ -50,20 +50,21 @@
         var startEntry = (currentPage-1) * numRowsPerPage;
         var endEntry = startEntry + numRowsPerPage;
         var data = cacheData.slice( startEntry , endEntry );
+		var truckType = "";
 		switch (data[i]['type']){
 			case "ILLEGAL":
-				var type = '<span style="color: #F00">Illegal</span>';
+				truckType += '<span style="color: #F00">Illegal</span>';
 				break;
 			case "LEGAL":
-				var type = '<span style="color: #0F0">Legal</span>';
+				truckType += '<span style="color: #0F0">Legal</span>';
 				break;
 			default:
-				var type = '<span style="color: #0F0">Legal</span>';
+				truckType += '<span style="color: #00F">Unknown</span>';
 				break;
 		}
             tab.html("");
             for (var i = 0; i < data.length; i++) {
-                tab.append('<tr> <td>'+data[i]['time']+'</td> <td>'+data[i]['player']+'</td> <td>'+type+'</td> <td>'+data[i]['location']+'</td> </tr>');
+                tab.append('<tr> <td>'+data[i]['time']+'</td> <td>'+data[i]['player']+'</td> <td>'+truckType+'</td> <td>'+data[i]['location']+'</td> </tr>');
             };
         }
 </script>
