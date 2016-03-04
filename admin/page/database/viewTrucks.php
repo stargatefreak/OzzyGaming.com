@@ -72,6 +72,9 @@
 				case "delivered":
 					option += '<span style="color: #00F">Delivered</span>';
 					break;
+				default:
+					option += '<span style="color: #00F">Chucked the truck off a cliff.</span>';
+					break;
 			}
                 tab.append('<tr> <td>'+data[i]['time']+'</td> <td>'+data[i]['player']+'</td> <td>'+truckType+'</td> <td>'+data[i]['location']+'</td> <td>'+option+'</td> </tr>');
         };
@@ -101,9 +104,9 @@
                 $output['data'][] = array(
                         "time" => $log['time'],
                         "player" => trim($matches[1]),
+						"option" => trim($matches[2]),
                         "type" => trim($matches[3]),
-                        "location" => trim($matches[4]),
-						"option" => trim($matches[2])
+                        "location" => trim($matches[4])
                     );
             }
         }
