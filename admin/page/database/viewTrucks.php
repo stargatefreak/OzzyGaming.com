@@ -29,7 +29,7 @@
 ?>
 <table id="nameTable" style="width: 100%; font-size: 12px;" class="table table-striped table-hover">
     <thead>
-        <tr> <th>Date</th> <th>Player</th> <th>Type</th> <th>GridRef</th> </tr>
+        <tr> <th>Date</th> <th>Player</th> <th>Type</th> <th>GridRef</th> <th>Deliver/Retrieve</th>  </tr>
     </thead>
     <tbody>
     </tbody>
@@ -51,22 +51,28 @@
         var endEntry = startEntry + numRowsPerPage;
         var data = cacheData.slice( startEntry , endEntry );
 		var truckType = "";
-		switch (data[i]['type']){
-			case "ILLEGAL":
-				truckType += '<span style="color: #F00">Illegal</span>';
-				break;
-			case "LEGAL":
-				truckType += '<span style="color: #0F0">Legal</span>';
-				break;
-			default:
-				truckType += '<span style="color: #00F">Unknown</span>';
-				break;
-		}
-            tab.html("");
-            for (var i = 0; i < data.length; i++) {
-                tab.append('<tr> <td>'+data[i]['time']+'</td> <td>'+data[i]['player']+'</td> <td>'+truckType+'</td> <td>'+data[i]['location']+'</td> </tr>');
-            };
-        }
+		tab.html("");
+		for (var i = 0; i < data.length; i++) {
+			switch (data[i]['type']){
+				case "ILLEGAL":
+					truckType += '<span style="color: #F00">Illegal</span>';
+					break;
+				case "LEGAL":
+					truckType += '<span style="color: #0F0">Legal</span>';
+					break;
+				default:
+					truckType += '<span style="color: #00F">Unknown</span>';
+					break;
+			}
+			switch (data[i]['option']){
+				case "started":
+					var option = '<span style="color: #00F">Started</span>'
+				case "delivered":
+					var option = '<span style="color: #00F">Delivered</span>'
+			}
+                tab.append('<tr> <td>'+data[i]['time']+'</td> <td>'+data[i]['player']+'</td> <td>'+truckType+'</td> <td>'+data[i]['location']+'</td> <td>'+option+'</td> </tr>');
+        };
+    }
 </script>
 <script src="js/pagination.js"></script>
 <script>
@@ -87,13 +93,14 @@
         if (count($result) != 0){
             foreach ($result as $log) {
                 // 0 - whole message, 1 - player, 2 - type, 3 - location
-                preg_match("/\"([\D\d]+) started a truck mission \((ILLEGAL|LEGAL)\) at [\[\d\,\.\-\]]+ \((\d+)\)\"/i",$log['info'], $matches);
+                preg_match("/\"([\D\d]+) (?:started|delivered) a truck mission \((ILLEGAL|LEGAL)\)\s*(?:for \$\d+)? at [\[\d\,\.\-\]]+ \((\d+)\)\"/i",$log['info'], $matches);
 
                 $output['data'][] = array(
                         "time" => $log['time'],
                         "player" => trim($matches[1]),
-                        "type" => trim($matches[2]),
-                        "location" => trim($matches[3])
+                        "type" => trim($matches[3]),
+                        "location" => trim($matches[4]),
+						"option" => trim($matches[2])
                     );
             }
         }
