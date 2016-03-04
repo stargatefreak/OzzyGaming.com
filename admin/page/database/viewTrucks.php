@@ -50,9 +50,9 @@
         var startEntry = (currentPage-1) * numRowsPerPage;
         var endEntry = startEntry + numRowsPerPage;
         var data = cacheData.slice( startEntry , endEntry );
-		var truckType = "";
 		tab.html("");
 		for (var i = 0; i < data.length; i++) {
+			var truckType = "";
 			switch (data[i]['type']){
 				case "ILLEGAL":
 					truckType += '<span style="color: #F00">Illegal</span>';
