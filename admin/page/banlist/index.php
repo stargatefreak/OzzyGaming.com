@@ -109,7 +109,7 @@
 		//$sftp->get('/home/steam/arma3/battleye/bans.txt', 'D:\xampp\scripts\banlist.txt');
 		
 
-		$guids = file("D:/xampp/scripts/banlist.txt");
+		//$guids = file("D:/xampp/scripts/banlist.txt");
 		
         $guidbans = array();
         $ipbans = array();
