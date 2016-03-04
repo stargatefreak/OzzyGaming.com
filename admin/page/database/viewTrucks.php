@@ -57,6 +57,9 @@
 			case "LEGAL":
 				var type = '<span style="color: #0F0">Legal</span>';
 				break;
+			default:
+				var type = '<span style="color: #0F0">Legal</span>';
+				break;
 		}
             tab.html("");
             for (var i = 0; i < data.length; i++) {
@@ -83,7 +86,7 @@
         if (count($result) != 0){
             foreach ($result as $log) {
                 // 0 - whole message, 1 - player, 2 - type, 3 - location
-                preg_match("/\"([\D\d]+) started a truck mission \((ILLEGAL|LEGAL)\) at [\[\d\,\.\]]+ \((\d+)\)\"/i",$log['info'], $matches);
+                preg_match("/\"([\D\d]+) started a truck mission \((ILLEGAL|LEGAL)\) at [\[\d\,\.\-\]]+ \((\d+)\)\"/i",$log['info'], $matches);
 
                 $output['data'][] = array(
                         "time" => $log['time'],
