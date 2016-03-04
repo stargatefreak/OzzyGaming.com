@@ -66,9 +66,11 @@
 			}
 			switch (data[i]['option']){
 				case "started":
-					var option = '<span style="color: #00F">Started</span>'
+					var option = '<span style="color: #00F">Started</span>';
+					break;
 				case "delivered":
-					var option = '<span style="color: #00F">Delivered</span>'
+					var option = '<span style="color: #00F">Delivered</span>';
+					break;
 			}
                 tab.append('<tr> <td>'+data[i]['time']+'</td> <td>'+data[i]['player']+'</td> <td>'+truckType+'</td> <td>'+data[i]['location']+'</td> <td>'+option+'</td> </tr>');
         };
