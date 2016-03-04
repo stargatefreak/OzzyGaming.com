@@ -6,7 +6,7 @@
         header("Location: ".$rootPage."/?page=database");
         die();
     };
-    $renewTime = 60*5; //5 minutes
+    $renewTime = 1; //5 minutes
     if (file_exists("cache/trucks.json")){
         $json = file_get_contents("cache/trucks.json");
         $data = json_decode($json, true);
@@ -53,6 +53,7 @@
 		tab.html("");
 		for (var i = 0; i < data.length; i++) {
 			var truckType = "";
+			var option = "";
 			switch (data[i]['type']){
 				case "ILLEGAL":
 					truckType += '<span style="color: #F00">Illegal</span>';
@@ -66,10 +67,10 @@
 			}
 			switch (data[i]['option']){
 				case "started":
-					var option = '<span style="color: #00F">Started</span>';
+					option += '<span style="color: #00F">Started</span>';
 					break;
 				case "delivered":
-					var option = '<span style="color: #00F">Delivered</span>';
+					option += '<span style="color: #00F">Delivered</span>';
 					break;
 			}
                 tab.append('<tr> <td>'+data[i]['time']+'</td> <td>'+data[i]['player']+'</td> <td>'+truckType+'</td> <td>'+data[i]['location']+'</td> <td>'+option+'</td> </tr>');
@@ -95,7 +96,7 @@
         if (count($result) != 0){
             foreach ($result as $log) {
                 // 0 - whole message, 1 - player, 2 - type, 3 - location
-                preg_match("/\"([\D\d]+) (?:started|delivered) a truck mission \((ILLEGAL|LEGAL)\)\s*(?:for \$\d+)? at [\[\d\,\.\-\]]+ \((\d+)\)\"/i",$log['info'], $matches);
+                preg_match("/\"([\D\d]+) (started|delivered) a truck mission \((ILLEGAL|LEGAL)\)\s*(?:for \$\d+)? at [\[\d\,\.\-\]]+ \((\d+)\)\"/i",$log['info'], $matches);
 
                 $output['data'][] = array(
                         "time" => $log['time'],
