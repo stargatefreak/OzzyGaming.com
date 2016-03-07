@@ -7,7 +7,7 @@
         die();
     };
 
-    $renewTime = 60*5; //5 minutes
+    $renewTime = 1*1; //5 minutes
     if (file_exists("cache/chatlog.json")){
         $json = file_get_contents("cache/chatlog.json");
         $data = json_decode($json, true);
@@ -21,8 +21,9 @@
     $json = file_get_contents("cache/chatlog.json");
     $data = json_decode($json, true);
 
-    echo '<h1>OzzyGaming AltisLife Chat Log</h1>';
+    echo '<h1>OzzyGaming Altis Life Chat Log</h1>';
     echo '<p>This data was generated at <strong>'.date("h:iA d-M", $data['timestamp']).'</strong> and will refresh at <strong>'.date("h:iA d-M", ($data['timestamp'] + $renewTime)).'</strong></p>';
+	echo '<p>Please note this page is not yet fully functional.</p>';
 
     // Pagnation stuff
     $numRowsPerPage = 200;
@@ -74,31 +75,22 @@
         });
     </script>
 <?php
-
-	    function regenChatlog(){
+        function regenChatlog(){
         // Grab the base Chats
-		include("../../scripts/sftp.php");
-		$sftp->get('/home/steam/arma3/ozzy.rpt', 'D:\xampp\scripts\chatlog.txt');
-		
-
-		$chats = file("D:/xampp/scripts/chatlog.txt");
-		$chats = array_reverse($chats);
-		
-        foreach ($chats as $log) {				
+        $chats = file("D:/ozzygamingservices/armatest/ozzylife/logfile_console_8060.log");
+        #$chats = array_reverse($chats);
+        foreach ($chats as $log) {                
                 if (preg_match("/(\d+:\d+:\d+) \w+ \w+: \((\w+)\) ([\w\s\D\d][^:]+): ([\D]*)/", $log, $matches)){
-
                 $output['data'][] = array(
                         "date" => $matches[1],
                         "channel" => $matches[2],
                         "sender" => $matches[3],
                         "message" => $matches[4]
                 );
-				}
+                }
         }
-		$output['timestamp'] = time();
-		$json = json_encode($output);
+        $output['timestamp'] = time();
+        $json = json_encode($output);
         file_put_contents('cache/chatlog.json', $json);
-
-		}
-
+        }
 ?>

@@ -1,7 +1,7 @@
 <?php
     SESSION_START();
     date_default_timezone_set("Australia/Sydney");
-
+	echo "<title>OzzyGaming.com Admin Tools</title>";
     // Some variables to be accessed by all included pages
     $rootPage = "http://web.ozzygaming.com/admin";
     $ranks = array(1=>"Helpdesk",2=>"Moderator",3=>"Administrator",4=>"Server Administrator",5=>"Server Manager",6=>"Server Executive");
