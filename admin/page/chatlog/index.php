@@ -77,7 +77,7 @@
 <?php
         function regenChatlog(){
         // Grab the base Chats
-        $chats = file("D:/ozzygamingservices/armatest/ozzylife/logfile_console_8060.log");
+        #$chats = file("D:/ozzygamingservices/armatest/ozzylife/logfile_console_8060.log");
         #$chats = array_reverse($chats);
         foreach ($chats as $log) {                
                 if (preg_match("/(\d+:\d+:\d+) \w+ \w+: \((\w+)\) ([\w\s\D\d][^:]+): ([\D]*)/", $log, $matches)){
