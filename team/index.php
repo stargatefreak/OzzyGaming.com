@@ -29,7 +29,7 @@ include("../../scripts/gamedb.php");
 $query = $gdb->prepare("SELECT adminname,adminbio,adminlevel,adminimage,adminemail FROM arma3life.admins WHERE adminlevel > 1 and active = '1' order by id asc");
 $query->execute();
 $result = $query->fetchall(PDO::FETCH_ASSOC);
-$ranks = array(1=>"Helpdesk",2=>"Moderator",3=>"Administrator",4=>"Server Admin",5=>"Manager",6=>"Executive",7=>"Founder");
+$ranks = array(1=>"Helpdesk",2=>"Moderator",3=>"Administrator",4=>"Server Admin",5=>"Manager",6=>"Executive",7=>"Founder",8=>"Interim Executive");
 ?>
 <div class="about-info4">
 	<div class="container no-padding">
@@ -42,15 +42,6 @@ $ranks = array(1=>"Helpdesk",2=>"Moderator",3=>"Administrator",4=>"Server Admin"
 									foreach ($result as $x) {
 										
 										$rank = $ranks[$x[adminlevel]];
-										if ($x[adminlevel] == 5 and $x[adminname] == "Craig"){
-											$rank = "Interim Executive";
-										}
-										
-										if ($x[adminbio] != '""'){
-											$bio = $x[adminbio];
-										} else {
-											$bio = "This staff member has not yet made their bio.";
-										};//<p>' . $bio . '</p>
 										echo '<div class="col-md-3">
 																		<div class="staff-wrap">
 																			<div class="staff-info">
